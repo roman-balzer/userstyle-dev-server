@@ -2,7 +2,7 @@
   "name": "userstyle-dev-server",
   "author": "Roman Balzer <roman.balzer@gmail.com>",
   "license": "MIT",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "description": "",
   "main": "index.js",
   "bin": {
