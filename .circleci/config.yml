@@ -10,7 +10,7 @@ defaults: &defaults
     - image: circleci/node:13.7
 
 jobs:
-  deploy:
+  build:
     <<: *defaults
 
     steps:
