@@ -3,27 +3,22 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:13.7
+
 jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:13.7
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
+  deploy:
+    <<: *defaults
 
     steps:
       - checkout
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run: npm ci
@@ -37,9 +32,16 @@ jobs:
           fingerprints:
             - "7e:5d:51:dc:ce:3e:26:85:4c:c0:9f:b8:e9:bf:66:19"
 
-      # run tests!
       - run: git config user.email "<email>"
       - run: git config user.name "Deployment Bot"
-      - run: npm version minor
+      - run: npm version minor -m "[skip ci] Increment Minor version from CI"
       - run: git push --follow-tags
-      - run: npm publish
+
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
