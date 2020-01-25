@@ -34,7 +34,7 @@ jobs:
 
       - run: git config user.email "<email>"
       - run: git config user.name "Deployment Bot"
-      - run: npm version minor -m "[skip ci] Increment Minor version from CI"
+      - run: npm version patch -m "[skip ci] Increment Minor version from CI"
       - run: git push --follow-tags
 
       - attach_workspace:
