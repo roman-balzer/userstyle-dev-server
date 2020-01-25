@@ -9,7 +9,11 @@
 
 Or similiar Extension, which can run javascript code. (Setting up a websocket to notify about style changes)
 
-# Usage (Development)
+### Install
+
+`npm i -D userstyle-dev-server`
+
+## Usage (Development)
 
 1. Create a index-File for instance style.scss, where you import all your partial scss-files.
 2. Create a npm script `userstyle-dev-server ./your/index/file.scss`
@@ -23,7 +27,7 @@ Or similiar Extension, which can run javascript code. (Setting up a websocket to
    ```
 4. Run your npm script and enjoy hot reloading of your userstyles
 
-# Usage (Build Output)
+## Usage (Build Output)
 
 1. Create a build-File (for instance userStyle.definition.scss), which contains your userstyle declaration comment and import styles (see example below)
 2. Create a npm script `userstyle-dev-server --build ./src/userStyle.definition.scss`
@@ -44,7 +48,7 @@ Or similiar Extension, which can run javascript code. (Setting up a websocket to
     }
 ```
 
-# Options
+## Options
 
     --help, -h      Print help
     --port, -p      Provide port for server, given port and port+1 will be used
