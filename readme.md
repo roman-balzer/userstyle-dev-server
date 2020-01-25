@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/roman-balzer/userstyle-dev-server/tree/master.svg?style=svg)](https://circleci.com/gh/roman-balzer/userstyle-dev-server/tree/master)
+
 ## Prerequisite
 
 - Tampermonkey

@@ -33,6 +33,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - add_ssh_keys:
+          fingerprints:
+            - "7e:5d:51:dc:ce:3e:26:85:4c:c0:9f:b8:e9:bf:66:19"
+
       # run tests!
       - run: git config user.email "<email>"
       - run: git config user.name "Deployment Bot"
