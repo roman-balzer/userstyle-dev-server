@@ -30,5 +30,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/roman-balzer/userstyle-dev-server"
-  }
+  },
+  "keywords": [
+    "userstyles",
+    "dev-server",
+    "stylus",
+    "hot-reload"
+  ]
 }
