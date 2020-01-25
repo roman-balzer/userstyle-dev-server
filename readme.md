@@ -53,3 +53,4 @@ Or similiar Extension, which can run javascript code. (Setting up a websocket to
     --help, -h      Print help
     --port, -p      Provide port for server, given port and port+1 will be used
                     Default: 10000 and 10001
+    --build, -b     Build the output file to dist folder
