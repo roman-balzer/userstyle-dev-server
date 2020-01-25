@@ -1,0 +1,34 @@
+{
+  "name": "userstyle-dev-server",
+  "author": "Roman Balzer <roman.balzer@gmail.com>",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "userstyle-dev-server": "./src/cli.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "concurrently": "^5.0.1",
+    "cross-spawn": "^7.0.1",
+    "live-server": "^1.2.1",
+    "meow": "^6.0.0",
+    "node-sass": "^4.13.0",
+    "webpack-dev-server": "^3.9.0",
+    "ws": "^7.2.1"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run build:watch\" \"npm run node:server\"",
+    "node:server": "node ./server.js",
+    "serve": "live-server out --port=10000 --watch=style.user.css --open=style.user.css --middleware=../../middleware.js",
+    "build": "node-sass src/style.scss out/style.user.css",
+    "build:watch": "node-sass src/style.scss out/style.dev.css -rw",
+    "build:userStyle": "node-sass src/userStyle.definition.scss out/style.user.css -r",
+    "build:exec": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/xAzaelx/userstyle-dev-server.git"
+  }
+}
