@@ -2,7 +2,7 @@ const spawn = require("cross-spawn");
 const chalk = require("chalk");
 
 const WATCHER_TAG = chalk.yellowBright("[Sass-Watch]:");
-const NODE_SASS_PATH = "node_modules/.bin/node-sass.cmd";
+const NODE_SASS_PATH = "node_modules/.bin/node-sass";
 
 let sass_watcher;
 
